@@ -20,6 +20,7 @@
 ## Explain, using examples, about Class Components, versus pure JavaScript functions in React, and when to use them.
 
 ## Explain the purpose of Client Side Routing in a SPA
+ - So we dont have to reload to side all the time, we just updata the view.
 ## Explain, using an example of your own, the basic “building blocks” in react-router
 ## Explain what is required to use react-router with a create-react-app project build from scratch
 
