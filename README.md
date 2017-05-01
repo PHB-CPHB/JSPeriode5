@@ -1,4 +1,4 @@
-# JSPeriode5
+# JSPeriode5 - React
 ### Note: This description is too big for a single exam-question. It will be divided up into separate questions for the exam
 
 ## Describe the term Single Page Application (SPA) and why it’s relevant for modern web-applications
