@@ -21,7 +21,7 @@ class BookStore {
 
   @action
   newBook(title, info, moreInfo){
-   let book = {"id": this._book.length(), "title" : title, "info" : info, "moreInfo" : moreInfo}
+   let book = {"id": this._books.length + 1, "title" : title, "info" : info, "moreInfo" : moreInfo}
    this.addBook(book);
  }
 
@@ -32,7 +32,7 @@ class BookStore {
 
   @action
   removeBook(book_id) {
-    this._books.splice(this._books.findIndex(book_id), 1)
+    this._books.splice(this._books.findIndex((book) => {return book.id === book_id}), 1)
   }
 
   getBook(id) {
