@@ -12,16 +12,15 @@ import App from "./App";
 export default class RouterComponent extends React.Component {
 
   render() {
-    var books = this.props.bookStore.books;
     return (
       <div>
         <Router history={hashHistory}>
           <Route path="/" component={App}>
             <IndexRoute component={Home}></IndexRoute>
             <Route path="products" component={Product}
-                   books={books}/>
+                   books={this.props.bookStore}/>
             <Route path="products/details/:id" component={Details}
-                   books={books}/>
+                   books={this.props.bookStore}/>
             <Route path="company" component={Company}/>
             <Route path="blog" component={Blog}/>
           </Route>
