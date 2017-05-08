@@ -27,5 +27,3 @@ import Home from "./views/home";
     );
   }
 }
-
-//Router end

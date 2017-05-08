@@ -2,27 +2,38 @@ import { observable, useStrict, action } from "mobx";
 
 class BookStore {
 
-
   @observable _books = [];
 
   constructor() {
     this.fetchBooks();
   }
 
+ 
+
   get books() {
     return this._books;
   }
 
   @action
-  changeBooks(books) {
-    this._books.replace(books)
+  changeBooks(book_id) {
+    this._books.replace(book_id)
   }
+
+  @action
+  newBook(title, info, moreInfo){
+   let book = {"id": this._book.length(), "title" : title, "info" : info, "moreInfo" : moreInfo}
+   this.addBook(book);
+ }
 
   @action
   addBook(book) {
     this._books.push(book)
   }
 
+  @action
+  removeBook(book_id) {
+    this._books.splice(this._books.findIndex(book_id), 1)
+  }
 
   getBook(id) {
     return this._books.filter((book) => {
