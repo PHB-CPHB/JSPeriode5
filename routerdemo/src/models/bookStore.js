@@ -1,49 +1,38 @@
-//DataStore for this Demo
-class BookStore { 
 
-  /*book = function(id, title, info, moreInfo) {
-    this.id = id;
-    this.title = title;
-    this.info = info;
-    this.moreInfo = moreInfo;
-  }*/
+import {observable, useStrict, action} from "mobx";
 
+class BookStore {
+
+
+  @observable _books = [];
+  
   constructor() {
     this.fetchBooks();
-    this._books = [];
   }
-  
-  get books(){
+  get books() {
     return this._books;
   }
 
-  fetchBooks(){
-    fetch("http://localhost:7777/books")
-    .then((response)=> {
-      return response.json()
-    }).
-    then((response) => {
-      this._books = response;
-      console.log("------------- " + JSON.stringify(this._books) + " ---------------");
-    })
+  getBook(id) {
+    return this._books.filter((book) => {
+      return book.id === Number(id);
+    })[0];
   }
-  
-  /*add = function(book){
-    id = netxId();
-    this._books.push(id, book);
-  } 
-  netxId = function(){
-    var netxId = 0;
-    return netxId++;
-  }
-  remove = function(book){
-    this._books.remove(book);
-  }
-  edit = function(book){
-    this._books.remove(book)
-    this._books.push(book)
-  }*/
 
+  fetchBooks = () => {
+    fetch("http://localhost:7777/books")
+      .then((response) => {
+        return response.json()
+      })
+      .then((response) => {
+        this._books = response;
+        console.log("Got books from server");
+      })
+  }
 }
 
-export default new BookStore();
+let store = new BookStore();
+
+window.store = store;
+
+export default store;

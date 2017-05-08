@@ -1,8 +1,7 @@
-import React from "react";
-import {IndexLink, Link} from "react-router";
+import React from "react"
+import { IndexLink, Link} from "react-router";
 
-//Outer View start
-export default  class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <div>
