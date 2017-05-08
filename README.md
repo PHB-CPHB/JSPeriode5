@@ -25,3 +25,9 @@
 ## Explain what is required to use react-router with a create-react-app project build from scratch
 
 ## Explain, using examples, how JavaScript array methods, like filter, map and (reduce) are used to generate dynamic HTML structures (tables, ul's etc.), and explain about React Keys.
+
+## Props vs State
+ - Props you cant change.
+ - Props are set by the parent and is fixed throughout the lifetime of the component.
+ - State is something you can store for later use.
+ - State can be changed by setState, which will update the page.
