@@ -1,14 +1,15 @@
-import {observable, useStrict, action
-} from "mobx";
+import { observable, useStrict, action } from "mobx";
 
-class BookStore { 
+class BookStore {
+
+
   @observable _books = [];
 
   constructor() {
     this.fetchBooks();
   }
 
-  get books(){
+  get books() {
     return this._books;
   }
 
@@ -18,9 +19,10 @@ class BookStore {
   }
 
   @action
-  addBook(book){
+  addBook(book) {
     this._books.push(book)
   }
+
 
   getBook(id) {
     return this._books.filter((book) => {
@@ -28,7 +30,7 @@ class BookStore {
     })[0];
   }
 
-   fetchBooks = ()=> {
+  fetchBooks = () => {
     fetch("http://localhost:7777/books")
       .then((response) => {
         return response.json()
@@ -38,11 +40,13 @@ class BookStore {
         console.log("Got books from server");
       })
   }
-
 }
 
+
 let store = new BookStore();
-// Can edit from the window
-//window.store = store;
+
+
+window.store = store;
+
 
 export default store;

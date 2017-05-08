@@ -1,15 +1,13 @@
 import React from "react";
-import {Router, Route, IndexRoute, hashHistory } from "react-router";
+import {Router,Route, IndexRoute,hashHistory} from "react-router";
 import Product from "./views/product";
+import App from "./App";
+import Company from "./views/company";
 import Blog from "./views/blog";
 import Details from "./views/details";
 import Home from "./views/home";
-import Company from "./views/company"
-import App from "./App";
 
-
-//Router start
-export default class RouterComponent extends React.Component {
+ export default class RouterComponent extends React.Component {
 
   render() {
     return (
