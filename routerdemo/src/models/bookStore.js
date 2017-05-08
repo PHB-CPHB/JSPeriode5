@@ -1,17 +1,28 @@
-
-import {observable, useStrict, action} from "mobx";
+import { observable, useStrict, action } from "mobx";
 
 class BookStore {
 
 
   @observable _books = [];
-  
+
   constructor() {
     this.fetchBooks();
   }
+
   get books() {
     return this._books;
   }
+
+  @action
+  changeBooks(books) {
+    this._books.replace(books)
+  }
+
+  @action
+  addBook(book) {
+    this._books.push(book)
+  }
+
 
   getBook(id) {
     return this._books.filter((book) => {
@@ -25,14 +36,17 @@ class BookStore {
         return response.json()
       })
       .then((response) => {
-        this._books = response;
+        this._books.replace(response);
         console.log("Got books from server");
       })
   }
 }
 
+
 let store = new BookStore();
 
+
 window.store = store;
+
 
 export default store;

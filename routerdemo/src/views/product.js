@@ -1,7 +1,6 @@
 import React from "react";
-import {Link} from "react-router";
+import { Link } from "react-router";
 import {observer} from "mobx-react";
-
 
 @observer
 export default class Product extends React.Component {
@@ -11,7 +10,6 @@ export default class Product extends React.Component {
     //The product page (a simple way to ensure "updated data")
     this.props.route.bookStore.fetchBooks();
   }
-
   render() {
     const books = this.props.route.bookStore.books;
     return (
