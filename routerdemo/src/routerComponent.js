@@ -18,9 +18,9 @@ export default class RouterComponent extends React.Component {
           <Route path="/" component={App}>
             <IndexRoute component={Home}></IndexRoute>
             <Route path="products" component={Product}
-                   books={this.props.bookStore}/>
+                   bookStore={this.props.bookStore}/>
             <Route path="products/details/:id" component={Details}
-                   books={this.props.bookStore}/>
+                   bookStore={this.props.bookStore}/>
             <Route path="company" component={Company}/>
             <Route path="blog" component={Blog}/>
           </Route>
