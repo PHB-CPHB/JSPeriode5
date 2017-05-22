@@ -1,4 +1,4 @@
-import { observable, useStrict, action } from "mobx";
+import { observable, action } from "mobx";
 
 class BookStore {
 
@@ -8,7 +8,7 @@ class BookStore {
     this.fetchBooks();
   }
 
- 
+
 
   get books() {
     return this._books;

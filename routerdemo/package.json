@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "mobx": "^3.1.9",
     "mobx-react": "^4.1.8",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.10.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-modal": "^1.7.7",
